@@ -1,2 +1,5 @@
 # PokedexLaunchX
-Pagina de una pokedex funcional con conexion a la pokeapi
+
+Pokedex web con conexion a la pokeapi para buscar y mostrar pokemons junto con sus estadisticas y datos de estos.
+
+![Image text](Pokedex.png)
