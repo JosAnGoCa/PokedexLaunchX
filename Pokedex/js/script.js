@@ -16,61 +16,61 @@ const fetchPokemon = () => {
                 pokeImagen(pokeImg);
 
                 let pokeName = data.name;
-                pokeNombre(pokeName);
+                pokeContenido(pokeName, "pokeNombre");
 
                 let pokeType = "";
                 data.types.forEach(elemento => {
                     pokeType += ", " + elemento.type.name;
                 });
                 pokeType = pokeType.substring(2);
-                pokeTipo(pokeType);
+                pokeContenido(pokeType, "type");
 
                 let pokeHeigth = data.height;
-                pokeAltura(pokeHeigth);
+                pokeContenido(pokeHeigth, "heigth");
 
                 let pokeWeight = data.weight;
-                pokePeso(pokeWeight);
+                pokeContenido(pokeWeight, "weight");
 
                 let pokeHp = data.stats[0].base_stat;
-                pokeSalud(pokeHp);
+                pokeContenido(pokeHp, "hp");
 
                 let pokeAttack = data.stats[1].base_stat;
-                pokeAtaque(pokeAttack);
+                pokeContenido(pokeAttack, "attack");
 
                 let pokeDefense = data.stats[2].base_stat;
-                pokeDefensa(pokeDefense);
+                pokeContenido(pokeDefense, "defense");
 
                 let pokeSpecial_atack = data.stats[3].base_stat;
-                pokeAtaque_especial(pokeSpecial_atack);
+                pokeContenido(pokeSpecial_atack, "special-attack");
 
                 let pokeSpecial_defense = data.stats[4].base_stat;
-                pokeDefensa_especial(pokeSpecial_defense);
+                pokeContenido(pokeSpecial_defense, "special-defense");
 
                 let pokeSpeed = data.stats[5].base_stat;
-                pokeVelocidad(pokeSpeed);
+                pokeContenido(pokeSpeed, "speed");
             } else {
                 let pokeImg = "img/pokebola.png";
                 pokeImagen(pokeImg);
                 let pokeName = "--";
-                pokeNombre(pokeName);
+                pokeContenido(pokeName, "pokeNombre");
                 let pokeType = "--";
-                pokeTipo(pokeType);
+                pokeContenido(pokeType, "type");
                 let pokeHeigth = "--";
-                pokeAltura(pokeHeigth);
+                pokeContenido(pokeHeigth, "heigth");
                 let pokeWeight = "--";
-                pokePeso(pokeWeight);
+                pokeContenido(pokeWeight, "weight");
                 let pokeHp = "--";
-                pokeSalud(pokeHp);
+                pokeContenido(pokeHp, "hp");
                 let pokeAttack = "--";
-                pokeAtaque(pokeAttack);
+                pokeContenido(pokeAttack, "attack");
                 let pokeDefense = "--";
-                pokeDefensa(pokeDefense);
+                pokeContenido(pokeDefense, "defense");
                 let pokeSpecial_atack = "--";
-                pokeAtaque_especial(pokeSpecial_atack);
+                pokeContenido(pokeSpecial_atack, "special-attack");
                 let pokeSpecial_defense = "--";
-                pokeDefensa_especial(pokeSpecial_defense);
+                pokeContenido(pokeSpecial_defense, "special-defense");
                 let pokeSpeed = "--";
-                pokeVelocidad(pokeSpeed);
+                pokeContenido(pokeSpeed, "speed");
             }
         });
 };
@@ -87,52 +87,7 @@ const pokeImagen = imagen => {
     pokeImg.src = imagen;
 };
 
-const pokeNombre = nombre => {
-    const pokeDato = document.getElementById("pokeNombre");
-    pokeDato.innerText = nombre;
-};
-
-const pokeTipo = tipo => {
-    const pokeDato = document.getElementById("type");
-    pokeDato.innerText = tipo;
-};
-
-const pokeAltura = altura => {
-    const pokeDato = document.getElementById("heigth");
-    pokeDato.innerText = altura;
-};
-
-const pokePeso = peso => {
-    const pokeDato = document.getElementById("weight");
-    pokeDato.innerText = peso;
-};
-
-const pokeSalud = salud => {
-    const pokeDato = document.getElementById("hp");
-    pokeDato.innerText = salud;
-};
-
-const pokeAtaque = ataque => {
-    const pokeDato = document.getElementById("attack");
-    pokeDato.innerText = ataque;
-};
-
-const pokeDefensa = defensa => {
-    const pokeDato = document.getElementById("defense");
-    pokeDato.innerText = defensa;
-};
-
-const pokeAtaque_especial = ataque_especial => {
-    const pokeDato = document.getElementById("special-attack");
-    pokeDato.innerText = ataque_especial;
-};
-
-const pokeDefensa_especial = defensa_especial => {
-    const pokeDato = document.getElementById("special-defense");
-    pokeDato.innerText = defensa_especial;
-};
-
-const pokeVelocidad = velocidad => {
-    const pokeDato = document.getElementById("speed");
-    pokeDato.innerText = velocidad;
+pokeContenido = (contenido, id) => {
+    const pokeDato = document.getElementById(id);
+    pokeDato.innerText = contenido;
 };
